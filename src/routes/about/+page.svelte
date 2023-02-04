@@ -1,3 +1,1 @@
-<main>
-    TODO
-</main>
+<main>TODO</main>
