@@ -1,5 +1,5 @@
 <script>
-  import portrait from '$lib/assets/jonas-triki.jpg';
+  import portrait from '$lib/assets/jonas-triki.jpeg';
 </script>
 
 <main class="home">

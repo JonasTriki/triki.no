@@ -1,5 +1,7 @@
 <script>
   import '@fontsource/fira-sans';
+  import gitHubLogo from '$lib/assets/github-logo.svg';
+  import linkedInLogo from '$lib/assets/linkedin-logo.svg';
   import svelteLogo from '$lib/assets/svelte-logo.svg';
   import vercelLogo from '$lib/assets/vercel-logo.svg';
 </script>
@@ -11,6 +13,18 @@
     <a href="/projects">Projects</a>
     <a href="/resume">Resume</a>
   </nav>
+  <div class="social-media">
+    <div class="social-media-site">
+      <a href="https://github.com/JonasTriki" target="_blank" rel="noreferrer">
+        <img src={gitHubLogo} alt="GitHub" />
+      </a>
+    </div>
+    <div class="social-media-site">
+      <a href="https://www.linkedin.com/in/jonas-triki/" target="_blank" rel="noreferrer">
+        <img src={linkedInLogo} alt="LinkedIn" />
+      </a>
+    </div>
+  </div>
 </header>
 
 <slot />
@@ -30,6 +44,21 @@
 </footer>
 
 <style lang="scss">
+  $tablet-width: 768px;
+  $desktop-width: 1024px;
+
+  @mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+      @content;
+    }
+  }
+
+  @mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+      @content;
+    }
+  }
+
   :global(html, body) {
     margin: 0;
     padding: 0;
@@ -38,18 +67,52 @@
     background-color: #f7f3ee;
   }
   :global(header) {
+    display: flex;
+    justify-content: space-between;
     padding: 1rem;
 
     nav {
       display: flex;
       justify-content: space-between;
+      flex-grow: 1;
       max-width: 16rem;
+
+      @include tablet;
+      @include desktop {
+        max-width: 20rem;
+      }
 
       a {
         color: black;
         text-decoration: none;
         font-size: 1rem;
-        line-height: 1rem;
+        line-height: 2rem;
+
+        @include tablet;
+        @include desktop {
+          font-size: 1.125rem;
+          line-height: 2rem;
+        }
+      }
+    }
+
+    .social-media {
+      display: flex;
+
+      .social-media-site img {
+        width: 2rem;
+        height: 2rem;
+        vertical-align: middle;
+
+        @include tablet;
+        @include desktop {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+
+      .social-media-site:not(:last-child) {
+        margin-right: 1rem;
       }
     }
   }
