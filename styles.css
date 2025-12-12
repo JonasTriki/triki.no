@@ -35,8 +35,7 @@ section.profile {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+    margin: 20px 30px 30px 30px;
 }
 
 section.profile h1 {
@@ -79,12 +78,13 @@ img.profile-picture {
 }
 
 section.bio {
-    margin-top: 20px;
-    text-align: left;
+    margin: 20px 30px 0 30px;
+    text-align: justify;
+    line-height: 20px;
 }
 
 section.links {
-    margin-top: 20px;
+    margin: 30px 0 10px 0;
 }
 
 section.links ul {
