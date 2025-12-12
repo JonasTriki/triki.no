@@ -69,12 +69,28 @@ section.profile a:hover {
     text-decoration: dotted underline;
 }
 
+.profile-picture-container {
+    position: relative;
+    display: inline-block;
+}
+
 img.profile-picture {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #555;
+}
+
+img.santa-hat {
+    position: absolute;
+    width: 79px;
+    top: 6px;
+    left: 47px;
+    z-index: 11;
+    scale: 1.2;
+    rotate: 6deg;
+    transform: scaleX(-1);
 }
 
 section.bio {
@@ -135,6 +151,12 @@ section.links img {
         height: 120px;
     }
 
+    img.santa-hat {
+        width: 63px;
+        top: 5px;
+        left: 39px;
+    }
+
     section.bio {
         font-size: 0.95em;
         margin: 20px 15px;
@@ -167,6 +189,13 @@ section.links img {
         width: 100px;
         height: 100px;
         border: 2px solid #555;
+    }
+
+    img.santa-hat {
+        width: 63px;
+        top: -2px;
+        left: 25px;
+        scale: 1;
     }
 
     section.bio {
